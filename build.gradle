@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+test {
+    useTestNG()
+    scanForTestClasses = false //this one
+}
+
+
+task SanityTests(type: Test) {
+    dependsOn clean, compileTestJava
+    useTestNG {
+        includeGroups 'Sanity'
+        outputDirectory = file("$buildDir/SanityTestsResults")
+        parallel = "classes"
+        threadCount = 1
+        useDefaultListeners = false
+    }
+    scanForTestClasses = false
+
+    dependencies {
+        testImplementation(group: 'org.testng', name: 'testng', version: '6.14.3')
+        testImplementation(group: 'io.rest-assured', name: 'rest-assured', version: '4.5.0')
+        testImplementation(group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13')
+        testImplementation(group: 'org.projectlombok', name: 'lombok', version: '1.18.22')
+    }
+}
