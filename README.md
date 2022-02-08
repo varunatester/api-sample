@@ -8,7 +8,7 @@ This project is to demonstrate creating a test framework for api using design pa
 * IDE Used: **Intellij** Community Edition
 * Programming language: **JAVA**
 * Build/Dependency Management Tool: **Gradle**
-* Mock: **MockServer**
+
 
 **Prerequisties:**
 
@@ -36,11 +36,10 @@ This project is to demonstrate creating a test framework for api using design pa
 **How to run test:**
 
 * Run tests through IDE :
-  1.open mockapi.ipr  
-  2. Right click the *Tests file and run. This will run all the tests in the file.
-  3. Run specific annotated scenario : Navigate to SanityTests task in build.gradle right pane
+  1Right click the *Tests file and run. This will run all the tests in the file.
+  2Run specific annotated scenario : Navigate to SanityTests task in build.gradle right pane
   and double click the task.
-  4. ./gradlew test or ./gradlew SanityTests
+  3./gradlew test or ./gradlew SanityTests
 
 * Run tests through command line :
   1.Go to folder location where code is checkout, Run the test using command :./gradlew SanityTests
@@ -49,4 +48,12 @@ This project is to demonstrate creating a test framework for api using design pa
   1.Reports can be seen under build/reports/tests/SanityTests/index.html
 
 **Let's try it out**
+
+1. Login to application
+2. Search all Product
+3. Submit Product Review
+4. Any design pattern to try out
+5. Add tag to test and run all the tests using that tag
+6. Run the test both on local and prod deployed OWASP application
+
 
